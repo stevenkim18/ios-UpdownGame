@@ -20,3 +20,16 @@
 - 이벤트 기반 프로그래밍
 - 사용자의 이벤트나 시스템의 이벤트가 발생하면 동작하는 방식
 - 이벤트가 없으면 프로그램이 무작정 이벤트를 기다림.
+
+## Assets
+- 이미지 추가하고 저장(`cmd + s`)를 반드시 해줘야 함.
+
+### Asset Types
+- app icon
+- color set
+- data set
+    - sound, docs, video
+- image set
+- launch images
+- stcker
+- watch complication
