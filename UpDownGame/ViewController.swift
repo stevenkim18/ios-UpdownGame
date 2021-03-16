@@ -30,7 +30,18 @@ class ViewController: UIViewController {
         sliderValueLabel.text = String(Int(sender.value))
     }
     
+    func showAlert(title: String) {
+        let alert = UIAlertController(title: title, message: nil, preferredStyle: .alert)
+        let defaultAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
+        alert.addAction(defaultAction)
+        present(alert, animated: false, completion: reset)
+    }
+    
     @IBAction func touchUpHitButton() {
+        if tryCount == 5 {
+            showAlert(title: "시도 횟수를 초과했습니다!")
+            return
+        }
         tryCount += 1
         tryCountLabel.text = String(tryCount) + " / 5"
         print("slider", slider.value, "random", randomNumber)
@@ -41,10 +52,7 @@ class ViewController: UIViewController {
             maxinumValueLabel.text = String(Int(slider.value))
             slider.maximumValue = slider.value
         } else {
-            let alert = UIAlertController(title: "맞췄습니다!", message: nil, preferredStyle: .alert)
-            let defaultAction = UIAlertAction(title: "Ok", style: .default, handler: nil)
-            alert.addAction(defaultAction)
-            present(alert, animated: false, completion: reset)
+            showAlert(title: "맞췄습니다!")
         }
     }
     
